@@ -4,7 +4,8 @@ console.log('%cLos arreglos en JavaScript son una colección de datos', 'color:#
 
 let arr1 = new Array('manzana', 'naranjas', 'uvas'); // Utilizando el constructor con el operador new.
 let arr2 = [4, 6, 8, 10, 9, 2]; // Forma simplificada
-let arr3 = [1, 2, 3, 4, 5, 6];
+let arr3 = [1, 2, 3, 4, 5, 6]; 
+let arra5 = [];
 let arr4 = [
 
     true,
