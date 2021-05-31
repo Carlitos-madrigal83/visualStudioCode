@@ -15,15 +15,18 @@ let numeros = [];
 let numeraciones = ['primer', 'segundo', 'tercer'];
 
 let datoOriginal;
+let tmp;
+
+let numMayor, numMenor, posMayor, numProtegido;
 
 do {
-// 2 - Petición de los datos
+    // 2 - Petición de los datos
     datoOriginal = prompt('Indique el ' + numeraciones[0] + ' número');
 
     // Comprobar si quiere finalizar la ejecución
     if (datoOriginal !== null) { // Mientras no le de a cancelar
         // Pedir dato
-        let dato = +datoOriginal;
+        let dato = +datoOriginal || NaN;
 
         // Comprobar dato
         if (!isNaN(dato)) { // El dato es un número
@@ -34,10 +37,44 @@ do {
     }
 } while (datoOriginal !== null && numeros.length !== 3); // Cuando se introduzcan tres números correctos o le de a cancelar
 
+console.log('Array original: ', numeros);
+// 3 - Ordenar números
+// [5 - 4 - 10]
+// [10 - 5 - 4]
+
+for (let i = 0; i < numeros.length - 1; i++) {
+    numMenor = numeros[i];
+    numProtegido = numMenor;
+
+    for (let j = i + 1; j < numeros.length; j++) {
+
+        numMayor = numeros[j];
+        posMayor = j;
+
+        if (numMayor > numMenor) {
+            numeros[i] = numMayor;
+            numeros[posMayor] = numProtegido;
+        }
+    }
+}
+
+// for (let i = 0; i < numeros.length - 1; i++) {
+//     numMenor = numeros[i];
+//     numProtegido = numMenor;
+
+//     for (let j = i + 1; j < numeros.length; j++) {
+
+//         numMayor = numeros[j];
+//         posMayor = j;
+
+//         if (numMayor > numMenor) {
+//             numeros[i] = numMayor;
+//             numeros[posMayor] = numProtegido;
+//         }
+//     }
+// }
 
 
 
-
-    // 3 - Ordenar números
-
-    // 4 - Mostrar el resultado
+// 4 - Mostrar el resultado
+console.log('Array ordenado: ', numeros);
