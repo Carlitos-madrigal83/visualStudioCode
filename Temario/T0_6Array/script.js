@@ -75,7 +75,7 @@ arr3 = arr3.join(); // entre parentesis se agrega el elemento separador
 console.log('    arr3.join()', arr3);
 
 console.log('    %cSplit()', 'color:#118ab2');
-arr3 = arr3.split(',');
+arr3 = arr3.split(','); // entre parentesis se agrega el elemento separador
 console.log('    arr3.Split()', arr3);
 
 console.log('    %cToString()', 'color:#118ab2');
