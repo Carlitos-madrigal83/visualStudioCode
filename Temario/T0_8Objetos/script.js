@@ -42,7 +42,23 @@ edificio.numpiso = '8A';
 console.log('  ', persona);
 console.groupEnd();
 
+//////////////////////////////////////////////////////////////////////////
 
+// Crear métodos dentro del objeto ------ crear en notación de punto
+console.log('%cCrear métodos dentro del objeto.', 'color:#06d6a0');
+persona.mostrarInformacion
+persona.mostrarInformacion = function() {
+    console.log('Imprimiendo información del this:', this);
+}
+console.log('  ', persona);
+persona.mostrarInformacion();
+
+// Eliminar ----- crear en notación de punto
+console.log('%cEliminar miembro objeto', 'color:#06d6a0');
+// console.log('   delete persona.edad:', delete persona.edad);
+console.log('  ', persona);
+
+//////////////////////////////////////////////////////////////////////////
 
 // N O T A C I Ó N  D E  C O R C H E T E
 console.group('%cN O T A C I Ó N  D E  C O R C H E T E', 'color:#118ab2; font-weight:bold');
@@ -64,7 +80,7 @@ console.log('    persona[key2]', persona[key2]);
 
 // Crear métodos dentro del objeto ------ crear en notación de punto
 console.log('%cCrear métodos dentro del objeto.', 'color:#06d6a0');
-persona.mostrarInformacion = function () {
+persona.mostrarInformacion = function() {
     console.log('Imprimiendo información del this:', this);
 }
 
@@ -103,12 +119,12 @@ const materials = [
 ];
 
 let arrayDevueltoMap = materials.map(material => 'new' + material);
-let arrayDevueltoMap2 = materials.map(function (material) { return 'new' + material });
+let arrayDevueltoMap2 = materials.map(function(material) { return 'new' + material });
 
 function map(funcionRecibida) {
     this
     funcionRecibida(this[i]);
-    
+
 }
 
 console.log(arrayDevueltoMap);
