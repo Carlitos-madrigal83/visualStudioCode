@@ -8,30 +8,88 @@ let dictionaryColors = {
     finishProgram: 'color:#ef476f'
 }
 
-function createContact(){
+function createContact() {
 
 }
 
-function modifyContact(){
+function modifyContact() {
 
 }
 
-function showDataContact(){
+function showDataContact() {
 
 }
 
-function showAllContacts(){
+function showAllContacts() {
 
 }
 
-function removeContact(){
+function removeContact() {
+    urls = 'https:www.google.es,https:www.wikipedia.lugares.com,https:www.seriesYonkies.Spiderman.HomeComic.es';
+    arrayUrls = urls.split(',');
+
+    console.time();
+    for (let i = 0; i < arrayUrls.length; i++) {
+
+        let urlDividida = arrayUrls[i].split('.');
+
+        console.log(urlDividida);
+
+        if (urlDividida[urlDividida.length - 1] === 'es') {
+            console.log(arrayUrls[i]);
+        }
+
+    }
+    console.timeEnd();
 
 }
 
-function bridgeExecuteInstruction(titleMenu, menu){ // Argumentos
-    
-    console.log('%c' + titleMenu, dictionaryColors.titleMenu);
-    console.log(menu);
+removeContact();
+
+
+
+function bridgeExecuteInstruction(titleMenu, menu) { // Argumentos
+
+    let optionUser;
+    let tituloMenuMostrado = false;
+    let optionExit = menu.split('\n')[menu.split('\n').length - 1][0]; // 2 - Volver menú principal (Cancelar)
+
+    do {
+        if (!tituloMenuMostrado) {
+            console.log('%c' + titleMenu, dictionaryColors.titleMenu);
+
+        } else {
+            tituloMenuMostrado = false;
+        }
+
+        console.log(menu);
+
+        optionUser = prompt('Elija una de estas 2 opciones');
+        console.clear();
+
+        switch (optionUser) {
+            case '1':
+                console.log(menu.split('\n')[0]);
+
+                break;
+            case optionExit:
+                console.log('2 - Volver menú principal (Cancelar)');
+
+                break;
+
+            default:
+                console.log('%c' + titleMenu, dictionaryColors.titleMenu);
+                console.log('%cEl valor introducido no es válido', dictionaryColors.messageError);
+
+                tituloMenuMostrado = true;
+
+                break;
+        }
+
+    } while (optionUser !== optionExit && optionUser !== null);
+
+
+
 }
 
 function aplicationContactExecution() {
@@ -54,22 +112,23 @@ function aplicationContactExecution() {
         switch (optionUser) {
             case '1':
                 bridgeExecuteInstruction('Ingresar contacto', '1 - Ingresar nuevo contacto\n2 - Volver menú principal (Cancelar)'); // Parametros
-                
+
 
                 break;
 
             case '2':
-                bridgeExecuteInstruction('Modificar contacto');
+                bridgeExecuteInstruction('Modificar contacto', '1 - Modificar contacto\n2 - Volver menú principal (Cancelar)');
 
                 break;
 
             case '3':
-                bridgeExecuteInstruction('Mostrar contacto');
+                bridgeExecuteInstruction('Mostrar contacto', '1 - Mostrar datos contacto\n2 - Mostrar todos los contactos\n3 - Volver menú principal (Cancelar)');
+                // bridgeExecuteInstruction('Mostrar contacto', '1 - Mostrar datos contacto\n2 - Volver menú principal (Cancelar)');
 
                 break;
 
             case '4':
-                bridgeExecuteInstruction('Eliminar contacto');
+                bridgeExecuteInstruction('Eliminar contacto', '1 - Eliminar contacto\n2 - Volver menú principal (Cancelar)');
 
                 break;
 
