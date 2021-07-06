@@ -9,50 +9,38 @@ let dictionaryColors = {
 }
 
 function createContact() {
-
+    console.log('createContact');
 }
 
 function modifyContact() {
+    console.log('modifyContact');
 
 }
 
 function showDataContact() {
+    console.log('showDataContact');
 
 }
 
 function showAllContacts() {
-
+    console.log('showAllContacts');
 }
 
 function removeContact() {
-    urls = 'https:www.google.es,https:www.wikipedia.lugares.com,https:www.seriesYonkies.Spiderman.HomeComic.es';
-    arrayUrls = urls.split(',');
-
-    console.time();
-    for (let i = 0; i < arrayUrls.length; i++) {
-
-        let urlDividida = arrayUrls[i].split('.');
-
-        console.log(urlDividida);
-
-        if (urlDividida[urlDividida.length - 1] === 'es') {
-            console.log(arrayUrls[i]);
-        }
-
-    }
-    console.timeEnd();
-
+    console.log('removeContact');
 }
 
-removeContact();
+
+
 
 
 
 function bridgeExecuteInstruction(titleMenu, menu) { // Argumentos
 
-    let optionUser;
-    let tituloMenuMostrado = false;
-    let optionExit = menu.split('\n')[menu.split('\n').length - 1][0]; // 2 - Volver menú principal (Cancelar)
+    let optionUser,
+        tituloMenuMostrado = false,
+        menuFraccionado = menu.split('\n'),
+        optionExit = menuFraccionado[menuFraccionado.length - 1][0]; // 2 - Volver menú principal (Cancelar)
 
     do {
         if (!tituloMenuMostrado) {
@@ -69,11 +57,17 @@ function bridgeExecuteInstruction(titleMenu, menu) { // Argumentos
 
         switch (optionUser) {
             case '1':
-                console.log(menu.split('\n')[0]);
+                console.log(menuFraccionado[0]);
+
+
+
+                break;
+            case '2':
+                console.log(menuFraccionado[1]);
 
                 break;
             case optionExit:
-                console.log('2 - Volver menú principal (Cancelar)');
+                console.log(menuFraccionado[menuFraccionado.length - 1]);
 
                 break;
 
@@ -85,6 +79,8 @@ function bridgeExecuteInstruction(titleMenu, menu) { // Argumentos
 
                 break;
         }
+
+        //calle inocencia sanchez 4, carabanchel
 
     } while (optionUser !== optionExit && optionUser !== null);
 
@@ -111,24 +107,24 @@ function aplicationContactExecution() {
 
         switch (optionUser) {
             case '1':
-                bridgeExecuteInstruction('Ingresar contacto', '1 - Ingresar nuevo contacto\n2 - Volver menú principal (Cancelar)'); // Parametros
+                bridgeExecuteInstruction('Ingresar contacto', '1 - Ingresar nuevo contacto\n2 - Volver menú principal (Cancelar)', createContact); // Parametros
 
 
                 break;
 
             case '2':
-                bridgeExecuteInstruction('Modificar contacto', '1 - Modificar contacto\n2 - Volver menú principal (Cancelar)');
+                bridgeExecuteInstruction('Modificar contacto', '1 - Modificar contacto\n2 - Volver menú principal (Cancelar)', modifyContact);
 
                 break;
 
             case '3':
-                bridgeExecuteInstruction('Mostrar contacto', '1 - Mostrar datos contacto\n2 - Mostrar todos los contactos\n3 - Volver menú principal (Cancelar)');
+                bridgeExecuteInstruction('Mostrar contacto', '1 - Mostrar datos contacto\n2 - Mostrar todos los contactos\n3 - Volver menú principal (Cancelar)', showDataContact);
                 // bridgeExecuteInstruction('Mostrar contacto', '1 - Mostrar datos contacto\n2 - Volver menú principal (Cancelar)');
 
                 break;
 
             case '4':
-                bridgeExecuteInstruction('Eliminar contacto', '1 - Eliminar contacto\n2 - Volver menú principal (Cancelar)');
+                bridgeExecuteInstruction('Eliminar contacto', '1 - Eliminar contacto\n2 - Volver menú principal (Cancelar)', removeContact);
 
                 break;
 
@@ -153,4 +149,3 @@ function aplicationContactExecution() {
 }
 
 button.addEventListener('click', aplicationContactExecution);
-
