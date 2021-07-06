@@ -34,8 +34,7 @@ function removeContact() {
 
 
 
-
-function bridgeExecuteInstruction(titleMenu, menu) { // Argumentos
+function bridgeExecuteInstruction(titleMenu, menu, funcionesEjecutar) { // Argumentos
 
     let optionUser,
         tituloMenuMostrado = false,
@@ -55,30 +54,29 @@ function bridgeExecuteInstruction(titleMenu, menu) { // Argumentos
         optionUser = prompt('Elija una de estas 2 opciones');
         console.clear();
 
-        switch (optionUser) {
-            case '1':
-                console.log(menuFraccionado[0]);
+        if (!Number.isNaN(+optionUser)) { // cuando optionUser sea un número
 
+            if (Array.isArray(funcionesEjecutar) && (+optionUser >= 1 && +optionUser < menuFraccionado.length)) {
 
+                funcionesEjecutar[optionUser - 1]();
 
-                break;
-            case '2':
-                console.log(menuFraccionado[1]);
+            } else if (optionUser === '1') {
+                funcionesEjecutar();
+            }
 
-                break;
-            case optionExit:
-                console.log(menuFraccionado[menuFraccionado.length - 1]);
+        } else { // optionUser no es un número
+            console.log('%c' + titleMenu, dictionaryColors.titleMenu);
+            console.log('%cEl valor introducido no es válido', dictionaryColors.messageError);
 
-                break;
-
-            default:
-                console.log('%c' + titleMenu, dictionaryColors.titleMenu);
-                console.log('%cEl valor introducido no es válido', dictionaryColors.messageError);
-
-                tituloMenuMostrado = true;
-
-                break;
+            tituloMenuMostrado = true;
         }
+
+
+
+
+
+
+
 
         //calle inocencia sanchez 4, carabanchel
 
@@ -118,7 +116,7 @@ function aplicationContactExecution() {
                 break;
 
             case '3':
-                bridgeExecuteInstruction('Mostrar contacto', '1 - Mostrar datos contacto\n2 - Mostrar todos los contactos\n3 - Volver menú principal (Cancelar)', showDataContact);
+                bridgeExecuteInstruction('Mostrar contacto', '1 - Mostrar datos contacto\n2 - Mostrar todos los contactos\n3 - Volver menú principal (Cancelar)', [showDataContact, showAllContacts]);
                 // bridgeExecuteInstruction('Mostrar contacto', '1 - Mostrar datos contacto\n2 - Volver menú principal (Cancelar)');
 
                 break;
@@ -149,3 +147,7 @@ function aplicationContactExecution() {
 }
 
 button.addEventListener('click', aplicationContactExecution);
+
+
+
+
