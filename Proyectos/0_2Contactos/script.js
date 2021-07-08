@@ -1,5 +1,14 @@
 const button = document.querySelector('#init-program');
 
+const contacts = [];
+
+function Contact(name, lastname, phone, dni) { // Plantilla
+    this.name = name;
+    this.lastname = lastname;
+    this.phone = phone;
+    this.dni = dni;
+}
+
 let dictionaryColors = {
     titleMenu: 'color:#118ab2', // color títulos secciones de ventanas
     dataList: 'color:#ffd166', // color de indices, carga información formato lista
@@ -8,8 +17,15 @@ let dictionaryColors = {
     finishProgram: 'color:#ef476f'
 }
 
-function createContact() {
-    console.log('createContact');
+function createContact() { // 1 - pedir los datos al usuario, 2 - generar el contacto y mistrarlo por consola
+    let name = prompt('¿Me puede indicar su nombre?');
+    let lastname = prompt('¿Me puede indicar su apellido?');
+    let phone = prompt('¿Me puede indicar su numero de teléfono?');
+    let dni = prompt('¿Me puede indicar su dni?');
+
+    let contact = new Contact(name, lastname, phone, dni);
+
+    contacts.push(contact);
 }
 
 function modifyContact() {
@@ -54,7 +70,12 @@ function bridgeExecuteInstruction(titleMenu, menu, funcionesEjecutar) { // Argum
         optionUser = prompt('Elija una de estas 2 opciones');
         console.clear();
 
-        if (!Number.isNaN(+optionUser)) { // cuando optionUser sea un número
+        // optionUser = '';
+        // optionUser = 'Pepe';
+        // optionUser = '25';
+        // optionUser = null
+
+        if ((optionUser !== null && optionUser !== '') && !Number.isNaN(+optionUser)) { // cuando optionUser sea un número
 
             if (Array.isArray(funcionesEjecutar) && (+optionUser >= 1 && +optionUser < menuFraccionado.length)) {
 
@@ -64,12 +85,12 @@ function bridgeExecuteInstruction(titleMenu, menu, funcionesEjecutar) { // Argum
                 funcionesEjecutar();
             }
 
-        } else { // optionUser no es un número
+        } else if (optionUser !== null) { // optionUser no es un número
             console.log('%c' + titleMenu, dictionaryColors.titleMenu);
             console.log('%cEl valor introducido no es válido', dictionaryColors.messageError);
-
             tituloMenuMostrado = true;
         }
+
 
 
 
