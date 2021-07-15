@@ -17,15 +17,29 @@ let dictionaryColors = {
     finishProgram: 'color:#ef476f'
 }
 
-function createContact() { // 1 - pedir los datos al usuario, 2 - generar el contacto y mistrarlo por consola
-    let name = prompt('¿Me puede indicar su nombre?');
-    let lastname = prompt('¿Me puede indicar su apellido?');
-    let phone = prompt('¿Me puede indicar su numero de teléfono?');
-    let dni = prompt('¿Me puede indicar su dni?');
+// function createContact() { // 1 - pedir los datos al usuario, 2 - generar el contacto y mistrarlo por consola
 
-    let contact = new Contact(name, lastname, phone, dni);
+//     const objContact = new Contact();
+//     const keyUser = Object.keys(objContact);
+//     const newContact = new Contact();
+//     let dataUser = [];
 
-    contacts.push(contact);
+//     for (let i = 0; i < keyUser.length; i++) {
+//         dataUser.push(prompt('Indique el ' + keyUser[i]));
+//     }
+
+//     for (let i = 0; i < keyUser.length; i++) {
+
+//         newContact[keyUser[i]] = dataUser[i];
+//     }
+
+//     console.log(newContact);
+
+//     contacts.push(newContact);
+// }
+
+function createContact() { // Crear esta función para repasar la de arriba comentada
+
 }
 
 function modifyContact() {
@@ -91,19 +105,7 @@ function bridgeExecuteInstruction(titleMenu, menu, funcionesEjecutar) { // Argum
             tituloMenuMostrado = true;
         }
 
-
-
-
-
-
-
-
-
-        //calle inocencia sanchez 4, carabanchel
-
     } while (optionUser !== optionExit && optionUser !== null);
-
-
 
 }
 
@@ -168,6 +170,11 @@ function aplicationContactExecution() {
 }
 
 button.addEventListener('click', aplicationContactExecution);
+
+
+
+
+
 
 
 
