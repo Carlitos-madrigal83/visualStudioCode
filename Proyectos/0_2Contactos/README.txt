@@ -18,7 +18,7 @@ Esta opción le debe mostrar un submenú con dos opciones:
 Si elige 'Ingresar nuevo contacto', se le pedirá al usuario que introduzca un número obligatorio de datos del contacto  (cuatro datos; nombre, apellido, telefono y dni) y que en todas las peticiones le permita cancelar el proceso para volver
 directamente al submenú.
   Ingresar contacto
-  Cancelar - volver menú principal
+  Cancelar - volver submenú
 
   Caso verdadero:
   (En caso de introducir el dato correctamente)

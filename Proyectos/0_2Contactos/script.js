@@ -17,30 +17,30 @@ let dictionaryColors = {
     finishProgram: 'color:#ef476f'
 }
 
-// function createContact() { // 1 - pedir los datos al usuario, 2 - generar el contacto y mistrarlo por consola
+function createContact() { // 1 - pedir los datos al usuario, 2 - generar el contacto y mistrarlo por consola
 
-//     const objContact = new Contact();
-//     const keyUser = Object.keys(objContact);
-//     const newContact = new Contact();
-//     let dataUser = [];
+    const objContact = new Contact();
+    const keyUser = Object.keys(objContact);
+    const newContact = new Contact();
+    let dataUser = [];
+    let expresionesRegulares = [/^[a-zA-Z áéíóú]{1,32}$/, /^[a-zA-Z áéíóú]{1,32}$/, /^[0-9]{9}$/, /^[0-9]{8,8}[A-Za-z]$/];
 
-//     for (let i = 0; i < keyUser.length; i++) {
-//         dataUser.push(prompt('Indique el ' + keyUser[i]));
-//     }
+    for (let i = 0; i < keyUser.length; i++) {
+        let datoRecogido = prompt('Indique el ' + keyUser[i]);
+        dataUser.push(expresionesRegulares[i].test(datoRecogido));
 
-//     for (let i = 0; i < keyUser.length; i++) {
+    }
 
-//         newContact[keyUser[i]] = dataUser[i];
-//     }
+    for (let i = 0; i < keyUser.length; i++) {
 
-//     console.log(newContact);
+        newContact[keyUser[i]] = dataUser[i];
+    }
 
-//     contacts.push(newContact);
-// }
+    console.log(newContact);
 
-function createContact() { // Crear esta función para repasar la de arriba comentada
-
+    contacts.push(newContact);
 }
+
 
 function modifyContact() {
     console.log('modifyContact');
