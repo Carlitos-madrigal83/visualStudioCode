@@ -60,10 +60,6 @@ function removeContact() {
     console.log('removeContact');
 }
 
-
-
-
-
 function bridgeExecuteInstruction(titleMenu, menu, funcionesEjecutar) { // Argumentos
 
     let optionUser,
