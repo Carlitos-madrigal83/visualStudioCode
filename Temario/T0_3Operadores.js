@@ -68,15 +68,15 @@ console.log('       b **= a:', { b });
 // Operadores de comparación - - - >
 console.log('%c\n\nOperadores de comparación', 'color:#ef476f');
 
-// Operador de igualdad abstracta
-console.log('   %cOperador de igualdad abstracta', 'color:#118ab2');
+// Operador de igualdad
+console.log('   %cOperador de igualdad', 'color:#118ab2');
 console.log('       %cDevuelve true si los operandos son iguales.', 'color:#06d6a0');
 let value1 = 35;
 let value2 = '35';
 console.log('       value1 == value2:', value1 == value2);
 
-// Operador de desigualdad abstracta
-console.log('   %cOperador de desigualdad abstracta', 'color:#118ab2');
+// Operador de desigualdad
+console.log('   %cOperador de desigualdad', 'color:#118ab2');
 console.log('       %cDevuelve true si los operandos no son iguales.', 'color:#06d6a0');
 console.log('       value1 != value2:', value1 != value2);
 
@@ -251,33 +251,33 @@ console.log('       (!\'Cat\'), a1:', { a1 });
 console.log('   %cOperador de cortocircuito', 'color:#118ab2');
 console.log('       %cEvaluación con operador lógico AND (&&).', 'color:#06d6a0');
 let a2 = 12;
-let b2 = 'Hello world';
-console.log('       (12 && \'Hello world\'), a2 && b2:', a2 && b2);
+let b2 = 'Hellow word';
+console.log('       (12 && \'Hello word\'), a2 && b2:', a2 && b2);
 
 console.log('       %cEvaluación con operador lógico AND (&&).', 'color:#06d6a0');
 a2 = 0;
-b2 = 'Hello world';
-console.log('       (0 && \'Hello world\'), a2 && b2:', a2 && b2);
+b2 = 'Hellow word';
+console.log('       (0 && \'Hello word\'), a2 && b2:', a2 && b2);
 
 console.log('       %cEvaluación con operador lógico AND (&&).', 'color:#06d6a0');
-a2 = 'Hello world';
+a2 = 'Hello word';
 b2 = null;
-console.log('       (\'Hellow world\' && null), a2 && b2:', a2 && b2);
+console.log('       (\'Hellow word\' && null), a2 && b2:', a2 && b2);
 
 console.log('       %cEvaluación con operador lógico AND (&&).', 'color:#06d6a0');
 a2 = null;
-b2 = 'Hello world';
-console.log('       (null && \'Hello world\'), a2 && b2:', a2 && b2);
+b2 = 'Hello word';
+console.log('       (null && \'Hello word\'), a2 && b2:', a2 && b2);
 
 console.log('       %cEvaluación con operador lógico AND (&&).', 'color:#06d6a0');
 a2 = undefined;
-b2 = 'Hello world';
-console.log('       (undefined && \'Hello world\'), a2 && b2:', a2 && b2);
+b2 = 'Hello word';
+console.log('       (undefined && \'Hello word\'), a2 && b2:', a2 && b2);
 
 console.log('       %cEvaluación con operador lógico OR (||).', 'color:#06d6a0');
 a2 = 12;
-b2 = 'Hello world';
-console.log('       (12 && \'Hello world\'), a2 || b2:', a2 || b2);
+b2 = 'Hello word';
+console.log('       (12 && \'Hello word\'), a2 || b2:', a2 || b2);
 
 console.log('       %cEvaluación con operador lógico OR (||).', 'color:#06d6a0');
 a2 = undefined;
@@ -343,7 +343,7 @@ console.log('       status:', { status });
 
 // Operador coma - - - >
 console.log('%c\n\nOperador coma ', 'color:#ef476f');
-console.log('       %cPermite separar datos en estructuras de datos, como arrays o parámetros, etc.', 'color:#06d6a0');
+console.log('       %cUnión de dos cadenas con asignación simple.', 'color:#06d6a0');
 let array1 = [
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
@@ -355,13 +355,14 @@ let array1 = [
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-];
-
+]
 
 for (let i = 0, j = 9; i <= 9; i++, j--) {
     console.log('       a[' + i + '][' + j + '] = ', array1[i][j]);
 
 }
+
+
 
 // Operadores unarios - - - >
 console.log('%c\n\nOperadores unarios ', 'color:#ef476f');

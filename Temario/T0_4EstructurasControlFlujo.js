@@ -89,6 +89,8 @@ switch (animal) {
         break;
 }
 
+console.log('       %cEvaluación avanzada switch.', 'color:#06d6a0');
+
 
 // Iterativas - - - >
 console.log('%c\n\nIterativas', 'color:#ef476f');
