@@ -2,49 +2,60 @@
 // Si los tres números son iguales hay que decirselo
 // Si, no mete correctamente un número, detener el programa informando al usuario 
 // de que hay un error
+let numbersUser1 = +prompt('Inserte un numero');
+let numbersUser2;
+let numbersUser3;
 
-// 1 - Crear variables
-let numeraciones = ["primer", "segundo", "tercer"];
-let numerosUsuario = [];
-let valorIncorrecto = false;
-let numeroMayor = 0;
+let numerosValidos = false;
 
-// 2 - Pedir números al usuario
-for (let i = 0; i < numeraciones.length; i++) {
+if (!Number.isNaN(numbersUser1)) {
 
-    if (!valorIncorrecto) { // Mientras que el anterior sea correcto
-        let numero = +prompt("Indique el " + numeraciones[i] + " número aleatorio");
+    numbersUser2 = +prompt('Inserte un numero');
 
-        if (!isNaN(numero))
-            numerosUsuario.push(numero);
-        else {
-            valorIncorrecto = true;
-            break;
+    if (!Number.isNaN(numbersUser2)) {
+
+        numbersUser3 = +prompt('Inserte un numero');
+
+        if (Number.isNaN(numbersUser3)) {
+            numerosValidos = true;
+
+
         }
 
     }
+
 }
 
+if (numerosValidos) {
 
-// 1º: i = 0, numero = 12, numerosUsuario = [12]
-// 2º: i = 1, numero = NaN, numerosUsuario = [12]
-// 3º: i = 2, numero = 5, numerosUsuario = [12]
-
-// [3, 5, 2, 6, 0];
-
-if (!valorIncorrecto) { // Entro cuando todos los datos son correctos
-    // 3 - Obtener número mayor del conjunto
-    for (let i = 0; i < numerosUsuario.length; i++) {
-
-        if (numerosUsuario[i] > numeroMayor) {
-            numeroMayor = numerosUsuario[i];
-        }
+    if (Number.isNaN(numbersUser1)) {
+        console.log('El número que ha introducido no es válido');
+    } else if (Number.isNaN(numbersUser2)) {
+        console.log('El número que ha introducido no es válido');
+    } else if (Number.isNaN(numbersUser3)) {
+        console.log('El número que ha introducido no es válido');
+    } else if (numbersUser1 > numbersUser2 && numbersUser1 > numbersUser3) {
+        console.log('El mayor es ' + numbersUser1);
+    } else if (numbersUser2 > numbersUser3) {
+        console.log('El mayor es ' + numbersUser2);
+    } else if (numbersUser3 > numbersUser2) {
+        console.log('El mayor es ' + numbersUser3);
+    } else {
+        console.log('Los tres números que ha introducido son iguales');
     }
-
-    // 4 - Mostrar el número mayor
-    // Serie: [2, 7, 1]
-    // Numero mayor: 7
-    console.log("Serie: " + numerosUsuario + "\nNúmero mayor: " + numeroMayor);
 } else {
-    console.error("Hay un error de ejecución");
+    console.log('El número que ha introducido no es válido');
 }
+
+
+
+
+
+
+// Errores:
+// - Números + otros símbolos(Ej: 123abc) 
+// - Que inserte decimales (Ej: 15,25)
+// - Cadena vacía (Ej: "")
+
+// Opción de salida
+// - De a cancelar (null)
