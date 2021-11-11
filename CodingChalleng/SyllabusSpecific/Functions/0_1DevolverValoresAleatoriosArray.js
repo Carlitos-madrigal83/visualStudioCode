@@ -5,6 +5,17 @@
 
 // Función definición
 
+let names = ['Ana', 'Carlos', 'Laura', 'Carla', 'Dani', 'Luisa'];
+function devolverValoresAleatoriosArray(arr) {
+    let indexRandom = Math.round(Math.random() * (arr.length - 1));
+    console.log(indexRandom);
+    // Tienes que generar de forma aleatoria los números del array,( índices ) de 0 a 5
+    console.log(arr[indexRandom]);
+
+
+}
+devolverValoresAleatoriosArray(names);
+
 // Función expresión
 
 // Función flecha (arrow function)
