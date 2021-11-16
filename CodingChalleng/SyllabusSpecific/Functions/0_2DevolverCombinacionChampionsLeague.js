@@ -27,13 +27,16 @@ let teams = ["Real Madrid", "FC Barcelona", "Liverpool", "Manchester City", "Atl
 function devolverCombinacionChampionsLeague(arrTeams) {
     let teamsRandom = Math.round(Math.random() * (arrTeams.length - 1));
     for (let i = 0; i < teams.length; i++) {
-        let partidos =
-            console.log(teams[i] + " vs " + teams[i]);
-
+        let equipo1 = teams[i];
+        console.log(teams[i] + " vs " + teams[i]);
+        for (let j = 0; j < teams.length; j++) {
+            let equipo2 = teams[j];
+            console.log(teams[j] + " vs " + teams[i]);
+        }
     }
     console.log(teamsRandom);
     console.log(arrTeams[teamsRandom] + " VS " + arrTeams[teamsRandom]);
 }
 devolverCombinacionChampionsLeague(teams);
 
-    // Tienes que generar de forma aleatoria los números del array,( índices ) de 0 a 5
+// Tienes que generar de forma aleatoria los números del array,( índices ) de 0 a 5
