@@ -97,17 +97,6 @@ let gruposChampionsLeague = {
 
 
 function devolverCombinacionChampionsLeague(arrTeams) {
-<<<<<<< HEAD
-
-    const championsLeague = {};
-
-    let grupos = Object.keys(gruposChampionsLeague);
-    for (let i = 0; i < grupos.length; i++) {
-        championsLeague[grupos[i]] = {
-            "equipos": [],
-            "partidos": {}
-        };
-=======
     let teamsRandom = Math.round(Math.random() * (arrTeams.length - 1));
     for (let i = 0; i < teams.length; i++) {
         let equipo1 = teams[i];
@@ -116,9 +105,7 @@ function devolverCombinacionChampionsLeague(arrTeams) {
             let equipo2 = teams[j];
             console.log(teams[j] + " vs " + teams[i]);
         }
->>>>>>> 20ec73cb9a37187644edc5be3631e61e73c98dde
     }
-
 
 
 
@@ -154,7 +141,4 @@ function verificarAleatorio(grupo, numRandom, equipoLocal) {
     return (equipoLocal !== grupo[numRandom]) ? true : false
 };
 
-<<<<<<< HEAD
-=======
 // Tienes que generar de forma aleatoria los números del array,( índices ) de 0 a 5
->>>>>>> 20ec73cb9a37187644edc5be3631e61e73c98dde
