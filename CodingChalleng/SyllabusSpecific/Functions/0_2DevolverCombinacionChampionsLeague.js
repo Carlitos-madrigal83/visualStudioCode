@@ -24,10 +24,17 @@
 // - mapearArray() -> encargada de eliminar los equipos que ya han competido
 
 let gruposChampionsLeague = {
-    "grupoA": ["Real Madrid", "FC Barcelona", "Liverpool", "Manchester City"],
-    "grupoB": ["2", "2", "2", "2"],
-    "grupoC": ["3", "3", "3", "3"],
+    grupoA: ["Man.city", "ParisSaintGermain", "Club Brujas", "RB Leipzig"],
+    grupoB: ["Liverpool", "Porto", "Atletico de Madrid", "AC Milan:-)"],
+    grupoC: ["Ajax", "Borusia Dortmund", "Spoting CP", "Besiktas"],
+    grupoD: ["Real Madrid", "Inter", "sheriff", "Shakhtar Donetsk"],
+    grupoE: ["Bayern Munich", "FC Barcelona:-)", "Benfica", "Dinamo de Kiev"],
+    grupoF: ["Man.United", "Villareal", "Atalanta", "YoungBoys FC"],
+    grupoG: ["Salzburgo FC", "LOSC", "Wolfsburg", "Sevilla"],
+    grupoH: ["Juventus", "Chelsea", "Zenit", "Malmó"],
 };
+
+
 //"Atlético de Madrid", "Sevilla CF", "Juventus", "Bayern de Munich"];
 
 
@@ -96,43 +103,55 @@ let gruposChampionsLeague = {
 */
 
 
-function devolverCombinacionChampionsLeague(arrTeams) {
-    let teamsRandom = Math.round(Math.random() * (arrTeams.length - 1));
-    for (let i = 0; i < teams.length; i++) {
-        let equipo1 = teams[i];
-        console.log(teams[i] + " vs " + teams[i]);
-        for (let j = 0; j < teams.length; j++) {
-            let equipo2 = teams[j];
-            console.log(teams[j] + " vs " + teams[i]);
+function devolverCombinacionChampionsLeague(objTeams) {
+
+    let championsLeague = {};
+
+    // Agregar grupos a la championsLeague
+    let groups = Object.keys(objTeams);
+    console.log({groups});
+
+    for (let i = 0; i < groups.length; i++) {
+        championsLeague[groups[i]] = {
+            "equipos": objTeams[groups[i]],
+            "partidos": {
+                [objTeams[groups[i]][0]]:{},
+                [objTeams[groups[i]][1]]:{},
+                [objTeams[groups[i]][2]]:{},
+                [objTeams[groups[i]][3]]:{}        
+            } 
+        };
+
+    }
+
+    console.log({ championsLeague })
+
+
+
+
+    // Obtener combinaciones de idas y vueltas
+    for (let i = 0; i < Object.keys(objTeams).length; i++) { // recorre cada grupo
+
+        let teams = Object.values(objTeams)[i];
+
+        console.log(Object.keys(objTeams)[i]);
+
+        for (let j = 0; j < teams.length; j++) { // recorre cada equipo
+            console.log("Idas y vueltas de: " + teams[j]);
+
+            for (let k = 0; k < teams.length; k++) { // obtiene combinaciones por cada equipo
+                if (teams[j] !== teams[k]) console.log(teams[k]);
+
+            }
         }
+
+        console.log("\n");
+
     }
 
 
 
 
-
-
-
-
-
-
-    console.log({ championsLeague });
-    /*let partidos = 3;
-
-
-
-
-
-    do {
-        let teamsRandom = Math.trunc(Math.random() * arrTeams.length);
-        let
-
-        if (verificarAleatorio(arrTeams, teamsRandom, arrTeams[0])) {
-            console.log(arrTeams[0] + " vs " + arrTeams[teamsRandom]);
-            partidos--;
-        }
-
-    } while (partidos > 0);*/
 
 }
 devolverCombinacionChampionsLeague(gruposChampionsLeague);
