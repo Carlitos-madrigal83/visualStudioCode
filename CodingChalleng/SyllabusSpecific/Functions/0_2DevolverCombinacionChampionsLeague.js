@@ -24,12 +24,12 @@
 // - mapearArray() -> encargada de eliminar los equipos que ya han competido
 
 let gruposChampionsLeague = {
-    grupoA: ["Man.city", "ParisSaintGermain", "Club Brujas", "RB Leipzig"],
-    grupoB: ["Liverpool", "Porto", "Atletico de Madrid", "AC Milan:-)"],
-    grupoC: ["Ajax", "Borusia Dortmund", "Spoting CP", "Besiktas"],
-    grupoD: ["Real Madrid", "Inter", "sheriff", "Shakhtar Donetsk"],
-    grupoE: ["Bayern Munich", "FC Barcelona:-)", "Benfica", "Dinamo de Kiev"],
-    grupoF: ["Man.United", "Villareal", "Atalanta", "YoungBoys FC"],
+    grupoA: ["Man. City", "Paris Saint Germain", "Club Brujas", "RB Leipzig"],
+    grupoB: ["Liverpool", "Oporto", "Atletico de Madrid", "AC Milan"],
+    grupoC: ["Ajax", "Borusia Dortmund", "Sporting CP", "Besiktas"],
+    grupoD: ["Real Madrid", "Inter", "Sheriff", "Shakhtar Donetsk"],
+    grupoE: ["Bayern Munich", "FC Barcelona", "Benfica", "Dinamo de Kiev"],
+    grupoF: ["Man. United", "Villareal", "Atalanta", "YoungBoys FC"],
     grupoG: ["Salzburgo FC", "LOSC", "Wolfsburg", "Sevilla"],
     grupoH: ["Juventus", "Chelsea", "Zenit", "Malmó"],
 };
@@ -101,27 +101,59 @@ let gruposChampionsLeague = {
         grupoH: {...}
     }
 */
+function eliminarEspacios(str) {
+    return str.split(' ').join('_');
+}
 
+function cargarEquipos(objTeams, groups, i) {
+
+    let obj = {};
+    for (let j = 0; j < objTeams[groups[i]].length; j++) {
+        obj[eliminarEspacios(objTeams[groups[i]][j])] = {};
+    }
+    return obj;
+}
+
+const obtenerEquipoPartido = function (equipoLocal, equiposVisitantes) {
+    obj = {};
+
+
+}
 
 function devolverCombinacionChampionsLeague(objTeams) {
 
     let championsLeague = {};
+    
 
     // Agregar grupos a la championsLeague
     let groups = Object.keys(objTeams);
-    console.log({groups});
+    console.log({ groups });
 
+    // Agregar los equipos por gurpo
     for (let i = 0; i < groups.length; i++) {
         championsLeague[groups[i]] = {
             "equipos": objTeams[groups[i]],
-            "partidos": {
-                [objTeams[groups[i]][0]]:{},
-                [objTeams[groups[i]][1]]:{},
-                [objTeams[groups[i]][2]]:{},
-                [objTeams[groups[i]][3]]:{}        
-            } 
+            "partidos": cargarEquipos(objTeams, groups, i)
         };
+    }
 
+    // Agregar idas y vueltas por equipo
+    for (let i = 0; i < groups.length; i++) {
+        let objs = Object.values(championsLeague[groups[i]].partidos);
+        for (let j = 0; j < objs.length; j++) {
+            objs[j].idas = null;
+            objs[j].vueltas = null;
+        }
+    }
+
+    // Agregar partidos idas y vueltas con resultados
+    for (let i = 0; i < groups.length; i++) {
+        let grupo = championsLeague[groups[i]];
+        let idasVueltas = Object.values(grupo.partidos);
+
+        for (let j = 0; j < idasVueltas.length; j++) {
+            idasVueltas[j].idas = obtenerEquipoPartido(Object.keys(grupo.partidos)[i], grupo.equipos);
+        }
     }
 
     console.log({ championsLeague })
@@ -148,11 +180,6 @@ function devolverCombinacionChampionsLeague(objTeams) {
         console.log("\n");
 
     }
-
-
-
-
-
 }
 devolverCombinacionChampionsLeague(gruposChampionsLeague);
 
