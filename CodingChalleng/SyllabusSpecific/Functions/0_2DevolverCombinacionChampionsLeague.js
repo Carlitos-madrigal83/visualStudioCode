@@ -172,3 +172,44 @@ function verificarAleatorio(grupo, numRandom, equipoLocal) {
 };
 
 // Tienes que generar de forma aleatoria los números del array,( índices ) de 0 a 5
+
+
+// E S Q U E M A 
+
+// Número de jornadas en fase de grupos - 6 -
+
+// Jornada 1 (ida)
+
+// -- Local --------- Visitante
+// Man. City -- vs -- Paris Saint Germain
+// Club Brujas -- vs -- RB Leipzig
+
+// Jornada 2 (ida)
+
+// -- Local --------- Visitante
+// RB Leipzig -- vs -- Man. City
+// Paris Saint Germain -- vs -- Club Brujas
+
+// Jornada 3 (ida)
+
+// -- Local --------- Visitante
+// Man. City -- vs -- Club Brujas
+// RB Leipzig -- vs -- Paris Saint Germain
+
+// Jornada 4 (vuelta)
+
+// -- Local --------- Visitante
+// Club Brujas -- vs -- Man. City
+// Paris Saint Germain -- vs -- RB Leipzig
+
+// Jornada 5 (vuelta)
+
+// -- Local --------- Visitante
+// Paris Saint Germain -- vs -- Man. City 
+// RB Leipzig -- vs -- Club Brujas
+
+// Jornada 6 (vuelta)
+
+// -- Local --------- Visitante
+// Man. City -- vs -- RB Leipzig
+// Club Brujas -- vs -- Paris Saint Germain
