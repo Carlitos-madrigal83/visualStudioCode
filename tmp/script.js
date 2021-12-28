@@ -1,79 +1,87 @@
-let a = 10;
+let per1 = {
+    nombre: 'Carlos',
+    edad: 38,
+    direccion: {
+        ciudad: 'Malaga',
+        cp: 49005,
+        piso: '4E',
+        mostrarInformacionDireccion: function () {
+            console.log(this);
 
-function pasoValor(a) {
-    a = 20;
-    console.log({ a });
+            let obj = {
+                iban: 'ES3048658375687367736',
+                dni: '3726t432F',
+                mostrarInformacion: function () {
+                    console.log(this);
+                }
+            }
 
-}
+            console.log(obj.mostrarInformacion);
+            obj.mostrarInformacion();
+        }
+    },
+    mostrarInformacion: function () {
 
-pasoValor(a);
-
-console.log({ a }); // 10
-
-
-let persona = {
-    nombre: "Alex",
-    edad: 26
-}
-
-function cambiarEdad(obj) {
-    obj.edad++;
-
-    console.log("obj.edad: ", obj.edad); // 27
-}
-
-cambiarEdad(persona);
-
-console.log("persona.edad: ", persona.edad); // 27
-
-// Evoluciones parámetros predeterminados
-
-function multiplicacion1(a, b) {
-    console.log(a);
-    console.log(b);
-
-    if (typeof b === 'undefined') {
-        b = 1
+        console.log('Nombre: ' + this.nombre + '\nEdad: ' + this.edad + '\nCiudad: ' + this.ciudad);
     }
 
-    console.log(a * b);
-}
+};
 
-multiplicacion1(5);
+let per2 = {
+    nombre: 'Jose',
+    edad: 20,
+    ciudad: 'Madrid',
+    direccion: {
+        ciudad: 'Malaga',
+        cp: 49005,
+        piso: '4E',
+        mostrarInformacionDireccion: function () {
+            console.log(this);
 
+            let obj = {
+                iban: 'ES3048658375687367736',
+                dni: '3726t432F',
+                mostrarInformacion: function () {
+                    console.log(this);
+                }
+            }
 
+            console.log(obj.mostrarInformacion);
+            obj.mostrarInformacion();
+        }
+    },
+    mostrarInformacion: function () {
 
-function multiplicacion2(a, b) {
-    console.log(a);
-    console.log(b);
+        console.log('Nombre: ' + this.nombre + '\nEdad: ' + this.edad + '\nCiudad: ' + this.ciudad);
+    }
+};
 
-    b = (typeof b === 'undefined') ? 1 : b;
+let per3 = {
+    nombre: 'Marta',
+    edad: 14,
+    ciudad: 'Salamanca',
+    direccion: {
+        ciudad: 'Malaga',
+        cp: 49005,
+        piso: '4E',
+        mostrarInformacionDireccion: function () {
+            console.log(this);
 
-    console.log(a * b);
-}
+            let obj = {
+                iban: 'ES3048658375687367736',
+                dni: '3726t432F',
+                mostrarInformacion: function () {
+                    console.log(this);
+                }
+            }
 
-multiplicacion2(5);
+            console.log(obj.mostrarInformacion);
+            obj.mostrarInformacion();
+        }
+    },
+    mostrarInformacion: function () {
 
-
-function multiplicacion3(a, b) {
-    // console.log(a);
-    // console.log(b);
-
-    b = b || 1;
-    return a * b;
-    //console.log(a * b);
-}
-
-multiplicacion3(5, 0);
-
-
-function multiplicacion4(a, b = 1) {
-    // console.log(a);
-    // console.log(b);
-    return a * b;
-
-    //console.log(a * b);
-}
-
-multiplicacion4(5, 0);
+        console.log('Nombre: ' + this.nombre + '\nEdad: ' + this.edad + '\nCiudad: ' + this.ciudad);
+    }
+};
 

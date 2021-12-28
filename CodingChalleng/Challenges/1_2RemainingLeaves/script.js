@@ -1,6 +1,6 @@
 const width = 4;
 const height = 4;
-const winds = 'RRUU';
+const winds = 'RR';
 const leaves = [
   [0, 0, 0, 0],
   [0, 0, 2, 0],
@@ -79,8 +79,15 @@ function restoreLeaves(modifyPosLeaves, leaves){
   return leaves;
 }
 
-function countLeaves(leaves) {
-  
+function countLeaves(leavesRestore) {
+  let suma = 0;
+    for (let i = 0; i < leavesRestore.length; i++) {
+
+      for (let j = 0; j < leavesRestore[i].length; j++) {
+        suma += leavesRestore[i][j];
+      }
+    }
+  return suma;
 }
 
 function main(width, height, leaves, winds) {
@@ -88,7 +95,7 @@ function main(width, height, leaves, winds) {
   console.log(height);   
   console.log(leaves);   
   console.log(winds);  
-
+  
   const posLeaves = capturingPositionsAndValues(leaves);
   console.log({posLeaves});
   console.log(typeof posLeaves);
@@ -99,7 +106,8 @@ function main(width, height, leaves, winds) {
   const leavesRestore = restoreLeaves(modifyPosLeaves, leaves);
   console.log({leavesRestore});
 
-  const numLeaves = countLeaves(leaves);
+  const numLeaves = countLeaves(leavesRestore);
+  console.log({numLeaves});
 
 }
 main(width, height, leaves, winds);
